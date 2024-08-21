@@ -36,18 +36,18 @@ if classifier == 'SVM':
 if classifier == 'RF':
   rf = RandomForestClassifier()
   rf.fit(x_train, y_train)
-  y_pred = svm.predict(x_test)
+  y_pred = rf.predict(x_test)
   acc = accuracy_score(y_test, y_pred)
   st.write(acc)
 if classifier == 'DT':
   dt = DecisionTreeClassifier()
   dt.fit(x_train, y_train)
-  y_pred = svm.predict(x_test)
+  y_pred = dt.predict(x_test)
   acc = accuracy_score(y_test, y_pred)
   st.write(acc)
 if classifier == 'NN':
   nn = MLPClassifier()
   nn.fit(x_train, y_train)
-  y_pred = svm.predict(x_test)
+  y_pred = nn.predict(x_test)
   acc = accuracy_score(y_test, y_pred)
   st.write(acc)
