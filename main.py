@@ -29,3 +29,18 @@ if classifier == 'SVM':
   y_pred = svm.predict(x_test)
   acc = accuracy_score(y_test, y_pred)
   st.write(acc)
+if classifier == 'RF':
+rf = RandomForestClassifier()
+rf.fit(x_train, y_train)
+ y_pred = svm.predict(x_test)
+  acc = accuracy_score(y_test, y_pred)
+if classifier == 'DT':
+  dt = DecisionTreeClassifier()
+dt.fit(x_train, y_train)
+ y_pred = svm.predict(x_test)
+  acc = accuracy_score(y_test, y_pred)
+if classifier == 'NN':
+  nn = MLPClassifier()
+nn.fit(x_train, y_train)
+ y_pred = svm.predict(x_test)
+  acc = accuracy_score(y_test, y_pred)
