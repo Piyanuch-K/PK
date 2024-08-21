@@ -45,6 +45,15 @@ if classifier == 'RF':
   ax.scatter(x, y)
   ax.scatter(x, y_pred)
   st.pyplot(fig)
+
+if classifier == 'DT':
+  dt = DecisionTreeRegressor()
+  dt.fit(x.reshape(-1, 1), y))
+  y_pred = dt.predict(x.reshape(-1, 1))
+  fig, ax = plt.subplots()
+  ax.scatter(x, y)
+  ax.scatter(x, y_pred)
+  st.pyplot(fig)
   
 if classifier == 'NN':
   nn = MLPRegressor()
