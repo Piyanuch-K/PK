@@ -11,9 +11,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 
-df = sns.load_dataset('iris')
-df
-
 x = np.random.rand(100)
 y = 2 * x + 1 + 0.2* np.random.rand(100)
 plt. scatter(x, y)
@@ -21,6 +18,7 @@ plt. scatter(x, y)
 st.sidebar.title('Classifiers')
 classifier = st.sidebar.selectbox('Select Classifier', ('KNN', 'SVM','RF', 'DT','NN'))
 k = st.sidebar.slider('K', 1, 20, 3)
+
 if classifier == 'KNN':
   knn = KNeighborsRegressor(n_neighbors=5)
   knn.fit(x.reshape(-1, 1), y)
@@ -29,6 +27,7 @@ if classifier == 'KNN':
   ax.scatter(x, y)
   ax.scatter(x, y_pred)
   st.pyplot(fig)
+  
 if classifier == 'SVM':
   svm = SVR()
   svm.fit(x.reshape(-1, 1), y)
@@ -37,6 +36,7 @@ if classifier == 'SVM':
   ax.scatter(x, y)
   ax.scatter(x, y_pred)
   st.pyplot(fig)
+  
 if classifier == 'RF':
   rf = RandomForestRegressor()
   rf.fit(x.reshape(-1, 1), y)
@@ -45,6 +45,7 @@ if classifier == 'RF':
   ax.scatter(x, y)
   ax.scatter(x, y_pred)
   st.pyplot(fig)
+  
 if classifier == 'DT':
   dt = DecisionTreeRegressor()
   dt.fit(x.reshape(-1, 1), y))
@@ -53,6 +54,7 @@ if classifier == 'DT':
   ax.scatter(x, y)
   ax.scatter(x, y_pred)
   st.pyplot(fig)
+  
 if classifier == 'NN':
   nn = MLPRegressor()
   nn.fit(x.reshape(-1, 1), y))
